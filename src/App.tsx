@@ -1,10 +1,10 @@
 import './App.css'
-import DisclosureParagraph from '../lib/DisclosureParagraph'
+import PLPHeaderSection from '../lib/PLPHeaderSection'
 
 function App() {
   return (
     <>
-<DisclosureParagraph/>
+<PLPHeaderSection/>
     </>
   )
 }

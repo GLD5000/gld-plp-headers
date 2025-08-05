@@ -1,65 +1,30 @@
 import { classMerge } from "./utils/twUtils";
 
+interface DisclosureParagraphProps extends React.ComponentProps<"p"> {
+  copy?: { intro: string; remainder: string };
+}
+
 export default function DisclosureParagraph({
   className,
+  copy = {
+    intro: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero",
+    remainder:
+      "fuga facilis vel consectetur quos sapiente deleniti eveniet dolores tempore eos deserunt officia quis ab? Excepturi vero tempore        minus beatae voluptatem!",
+  },
   ...props
-}: React.ComponentProps<"div">) {
+}: DisclosureParagraphProps) {
+  const { intro, remainder } = copy;
+  const trimmedIntro = intro.trim();
+  const trimmedRemainder = remainder.trim();
   return (
-      <div {...props} className={classMerge('bg-white w-full', className)}>
-      <style dangerouslySetInnerHTML={{
-        __html:`
-.read-more-state {
-  display: none;
-}
-
-.read-more-target {
-  // opacity: 0;
-  // max-height: 0;
-  // font-size: 0;
-  // transition: .15s ease;
-  display: none;
-}
-.read-more-state:checked ~ .read-more-wrap .read-more-target {
-display: inline;
-  // opacity: 1;
-  // font-size: inherit;
-  // max-height: 999em;
-}
-.read-more-ellipses {
-display: inline;
-}
-.read-more-state:checked ~ .read-more-wrap .read-more-ellipses {
-display: none;
-}
-
-
-.read-more-state ~ .read-more-trigger:before {
-  content: 'Show more';
-}
-
-.read-more-state:checked ~ .read-more-trigger:before {
-  content: 'Show less';
-}
-
-.read-more-trigger {
-  // cursor: pointer;
-  // display: inline-block;
-  // padding: 0 .5em;
-  // color: #666;
-  // font-size: .9em;
-  // line-height: 2;
-  // border: 1px solid #ddd;
-  // border-radius: .25em;
-}
-`}}>
-
-</style>
-  <input type="checkbox" className="read-more-state" id="post-1" />
-
-      <p className="read-more-wrap inline text-black">Lorem ipsum dolor sit amet, consectetur adipisicing elit.<span className="read-more-ellipses">...{'  '}</span> <span className="read-more-target">Libero fuga facilis vel consectetur quos sapiente deleniti eveniet dolores tempore eos deserunt officia quis ab? Excepturi vero tempore minus beatae voluptatem!</span>
-      </p>
-  
-  <label htmlFor="post-1" className="read-more-trigger cursor-pointer inline-block text-black"></label>
-</div>
+    <p
+      className={classMerge("read-more-wrap inline text-black text-base", className)}
+      {...props}
+    >
+      {trimmedIntro}
+      <span className="read-more-ellipses">...{"  "}</span>
+      <span className="read-more-target">{` ${trimmedRemainder}`}</span>
+      {"  "}
+    </p>
   );
 }
