@@ -1,4 +1,4 @@
-import DisclosureParagraph from "./DisclosureParagraph";
+import DisclosureParagraph from "./components/disclosureParagraph/DisclosureParagraph";
 import { classMerge } from "./utils/twUtils";
 
 export default function PLPHeaderSection({

@@ -1,4 +1,5 @@
-import { classMerge } from "./utils/twUtils";
+import { classMerge } from "../../utils/twUtils";
+import ConditionalSpan from "./ConditionalSpan";
 
 type DisclosureCopy = { intro: string; remainder?: string };
 
@@ -48,23 +49,27 @@ function getReturnElements(copy: DisclosureCopy) {
       {remainder && (
         <input
           type="checkbox"
-          className="intro peer hidden"
+          className="peer hidden"
           id="gld-read-more"
         />
       )}
       {strippedIntro}
       {hasPunctuation && (
-        <span className="full-stop hidden peer-checked:inline">
+        <ConditionalSpan comment="End punctuation" initiallyHidden>
           {intro.trim().at(-1)}
-        </span>
+        </ConditionalSpan>
       )}
       {remainder && (
         <>
-          <span className="ellipses inline peer-checked:hidden">...</span>
-          <span className="paragraph hidden peer-checked:inline">{` ${remainder.trim()}`}</span>
+          <ConditionalSpan comment="Ellipses">...</ConditionalSpan>
+          <ConditionalSpan
+            comment="Remainder Copy"
+            initiallyHidden
+          >{` ${remainder.trim()}`}</ConditionalSpan>
+
           <label
             htmlFor="gld-read-more"
-            className="cursor-pointer inline-block ml-2 underline font-bold after:content-['Show_more'] peer-checked:after:content-['Show_less']"
+            className="cursor-pointer inline-block ml-2 underline font-bold after:content-['Read_more'] peer-checked:after:content-['Read_less']"
           />
         </>
       )}

@@ -1,3 +1,3 @@
-import DisclosureParagraph from "./DisclosureParagraph";
+import DisclosureParagraph from "./components/disclosureParagraph/DisclosureParagraph";
 
 export {DisclosureParagraph}
