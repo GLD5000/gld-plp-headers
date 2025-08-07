@@ -1,4 +1,5 @@
 import { classMerge } from "../../utils/twUtils";
+import CheckboxHidden from "./CheckboxHidden";
 import ConditionalSpan from "./ConditionalSpan";
 
 type DisclosureCopy = { intro: string; remainder?: string };
@@ -47,11 +48,7 @@ function getReturnElements(copy: DisclosureCopy) {
   return (
     <>
       {remainder && (
-        <input
-          type="checkbox"
-          className="peer hidden"
-          id="gld-read-more"
-        />
+        <CheckboxHidden/>
       )}
       {strippedIntro}
       {hasPunctuation && (
