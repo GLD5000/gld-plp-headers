@@ -8,7 +8,7 @@ export default function PlpHeader({
     <h1
       {...props}
       className={classMerge(
-        "text-black text-xl",
+        "text-black text-lg",
         className
       )}
     />
