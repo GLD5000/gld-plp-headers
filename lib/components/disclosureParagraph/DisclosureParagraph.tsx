@@ -13,9 +13,9 @@ export default function DisclosureParagraph({
   className,
   copy = {
     intro:
-      "Introductory text and teaser words go here. You can click 'Show more' to see the rest.",
+      "Introductory text and teaser words go here. You can click 'Read more' to see the rest.",
     remainder:
-      "You will find here the remainder of whatever you need to include and it can be hidden when not needed by clicking 'Show less'.",
+      "You will find here the remainder of whatever you need to include and it can be hidden when not needed by clicking 'Read less'.",
   },
   ...props
 }: DisclosureParagraphProps) {
