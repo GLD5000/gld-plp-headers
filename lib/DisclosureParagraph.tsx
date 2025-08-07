@@ -1,42 +1,73 @@
 import { classMerge } from "./utils/twUtils";
 
+type DisclosureCopy = { intro: string; remainder?: string };
+
 interface DisclosureParagraphProps extends React.ComponentProps<"p"> {
-  copy?: { intro: string; remainder: string };
+  copy?: DisclosureCopy;
 }
 
 export default function DisclosureParagraph({
   className,
   copy = {
-    intro: "Introductory text and teaser words go here. Click 'Show more' to see the rest.",
+    intro:
+      "Introductory text and teaser words go here. You can click 'Show more' to see the rest.",
     remainder:
       "You will find here the remainder of whatever you need to include and it can be hidden when not needed by clicking 'Show less'.",
   },
   ...props
 }: DisclosureParagraphProps) {
-  const { intro, remainder } = copy;
-  const punctuationRegex = /[^\w]$/;
-  const trimmedIntro = intro.trim().replace(punctuationRegex, "");
-  const hasPunctuation = trimmedIntro.length !== intro.trim().length;
-  const trimmedRemainder = remainder.trim();
+  const returnElements = getReturnElements(copy);
 
   return (
     <p
       {...props}
       className={classMerge("bg-white w-full text-black", className)}
     >
-      <input type="checkbox" className="intro peer hidden" id="gld-read-more" />
-      {trimmedIntro}
+      {returnElements}
+    </p>
+  );
+}
+function processIntroString(intro: string, remainder: string | undefined) {
+  const punctuationRegex = /[^\w]$/;
+  const trimmedIntro = intro.trim();
+  const strippedIntro = remainder
+    ? trimmedIntro.replace(punctuationRegex, "")
+    : trimmedIntro;
+  const hasPunctuation = strippedIntro !== trimmedIntro;
+  return { strippedIntro, hasPunctuation };
+}
+
+function getReturnElements(copy: DisclosureCopy) {
+  const { intro, remainder } = copy;
+  const { strippedIntro, hasPunctuation } = processIntroString(
+    intro,
+    remainder
+  );
+  return (
+    <>
+      {remainder && (
+        <input
+          type="checkbox"
+          className="intro peer hidden"
+          id="gld-read-more"
+        />
+      )}
+      {strippedIntro}
       {hasPunctuation && (
         <span className="full-stop hidden peer-checked:inline">
           {intro.trim().at(-1)}
         </span>
       )}
-      <span className="ellipses inline peer-checked:hidden">...</span>
-      <span className="paragraph hidden peer-checked:inline">{` ${trimmedRemainder}`}</span>
-      <label
-        htmlFor="gld-read-more"
-        className="cursor-pointer inline-block ml-2 underline font-bold after:content-['Show_more'] peer-checked:after:content-['Show_less']"
-      />
-    </p>
+      {remainder && (
+        <>
+          <span className="ellipses inline peer-checked:hidden">...</span>
+          <span className="paragraph hidden peer-checked:inline">{` ${remainder.trim()}`}</span>
+          <label
+            htmlFor="gld-read-more"
+            className="cursor-pointer inline-block ml-2 underline font-bold after:content-['Show_more'] peer-checked:after:content-['Show_less']"
+          />
+        </>
+      )}
+    </>
   );
 }
