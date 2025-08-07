@@ -8,7 +8,7 @@ export default function CheckboxLabel({
     <label
       {...props}
       className={classMerge(
-        "cursor-pointer inline-block peer-checked:block ml-2 underline after:content-['Read_more'] peer-checked:after:content-['Read_less']",
+        "cursor-pointer inline-block peer-checked:block ml-2 peer-checked:mx-auto underline after:content-['Read_more'] peer-checked:after:content-['Read_less']",
         className
       )}
       htmlFor="gld-read-more"
