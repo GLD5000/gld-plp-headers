@@ -1,5 +1,4 @@
 import DisclosureParagraph from "./DisclosureParagraph";
-import DisclosureParagraphWrapper from "./DisclosureParagraphWrapper";
 import { classMerge } from "./utils/twUtils";
 
 export default function PLPHeaderSection({
@@ -11,9 +10,7 @@ export default function PLPHeaderSection({
       {...props}
       className={classMerge("bg-white w-full h-auto", className)}
     >
-      <DisclosureParagraphWrapper>
         <DisclosureParagraph />
-      </DisclosureParagraphWrapper>
     </section>
   );
 }

@@ -7,24 +7,36 @@ interface DisclosureParagraphProps extends React.ComponentProps<"p"> {
 export default function DisclosureParagraph({
   className,
   copy = {
-    intro: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero",
+    intro: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
     remainder:
-      "fuga facilis vel consectetur quos sapiente deleniti eveniet dolores tempore eos deserunt officia quis ab? Excepturi vero tempore        minus beatae voluptatem!",
+      "Ludem fuga facilis vel consectetur quos sapiente deleniti eveniet dolores tempore eos deserunt officia quis ab? Excepturi vero tempore        minus beatae voluptatem!",
   },
   ...props
 }: DisclosureParagraphProps) {
   const { intro, remainder } = copy;
-  const trimmedIntro = intro.trim();
+  const punctuationRegex = /[^\w]$/;
+  const trimmedIntro = intro.trim().replace(punctuationRegex, "");
+  const hasPunctuation = trimmedIntro.length !== intro.trim().length;
   const trimmedRemainder = remainder.trim();
+
   return (
     <p
-      className={classMerge("read-more-wrap inline text-black text-base", className)}
       {...props}
+      className={classMerge("bg-white w-full text-black", className)}
     >
+      <input type="checkbox" className="intro peer hidden" id="gld-read-more" />
       {trimmedIntro}
-      <span className="read-more-ellipses">...{"  "}</span>
-      <span className="read-more-target">{` ${trimmedRemainder}`}</span>
-      {"  "}
+      {hasPunctuation && (
+        <span className="full-stop hidden peer-checked:inline">
+          {intro.trim().at(-1)}
+        </span>
+      )}
+      <span className="ellipses inline peer-checked:hidden">...</span>
+      <span className="paragraph hidden peer-checked:inline">{` ${trimmedRemainder}`}</span>
+      <label
+        htmlFor="gld-read-more"
+        className="cursor-pointer inline-block ml-2 underline font-bold after:content-['Show_more'] peer-checked:after:content-['Show_less']"
+      />
     </p>
   );
 }
