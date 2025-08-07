@@ -7,9 +7,9 @@ interface DisclosureParagraphProps extends React.ComponentProps<"p"> {
 export default function DisclosureParagraph({
   className,
   copy = {
-    intro: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+    intro: "Introductory text and words go here. Click 'Show more' to see the rest.",
     remainder:
-      "Ludem fuga facilis vel consectetur quos sapiente deleniti eveniet dolores tempore eos deserunt officia quis ab? Excepturi vero tempore        minus beatae voluptatem!",
+      "You will find here the remainder of whatever you need to include and it can be hidden when not needed by clicking 'Show less'.",
   },
   ...props
 }: DisclosureParagraphProps) {
