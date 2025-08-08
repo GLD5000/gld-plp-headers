@@ -16,6 +16,9 @@
   "main": "dist/plp-headers.js",
   "types": "dist/main.d.ts",
   "style": "dist/styles.css",
+  "exports": {
+    "./styles.css": "./dist/styles.css"
+  },
   "files": [
     "dist"
   ],
