@@ -21,6 +21,7 @@
   ],
   "scripts": {
     "dev": "vite",
+    "prebuild": "tailwindcss -m -i ./src/App.css -o ./lib/styles.css",
     "prepare": "npm run build",
     "build": "tsc -b ./tsconfig.lib.json && vite build && npm run build:css",
     "build:css": "tailwindcss -m -i ./src/App.css -o ./dist/styles.css",
