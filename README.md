@@ -1,6 +1,6 @@
 # [@gld5000-react/plp-headers](https://www.npmjs.com/package/@gld5000-react/plp-headers)
 
-undefined
+A selection of PLP type header sections for your UI library
 
 ## Install
 
