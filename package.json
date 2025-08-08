@@ -17,8 +17,7 @@
   "types": "dist/main.d.ts",
   "style": "dist/styles.css",
   "files": [
-    "dist",
-    "lib"
+    "dist"
   ],
   "scripts": {
     "dev": "vite",
