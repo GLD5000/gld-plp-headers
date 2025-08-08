@@ -3,7 +3,7 @@ import CheckboxHidden from "./CheckboxHidden";
 import CheckboxLabel from "./CheckboxLabel";
 import ConditionalSpan from "./ConditionalSpan";
 
-type DisclosureCopy = { intro: string; remainder?: string };
+export type DisclosureCopy = { intro: string; remainder?: string };
 
 interface DisclosureParagraphProps extends React.ComponentProps<"p"> {
   copy?: DisclosureCopy;
