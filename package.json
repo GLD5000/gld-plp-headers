@@ -12,6 +12,7 @@
   "license": "MIT",
   "author": "GLD5000",
   "type": "module",
+  "main": "dist/plp-headers.js",
   "types": "dist/main.d.ts",
   "files": [
     "/lib"
