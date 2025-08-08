@@ -15,7 +15,7 @@
   "main": "dist/plp-headers.js",
   "types": "dist/main.d.ts",
   "files": [
-    "/lib"
+    "dist"
   ],
   "directories": {
     "lib": "lib"
