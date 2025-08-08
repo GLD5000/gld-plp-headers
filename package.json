@@ -1,7 +1,7 @@
 {
   "name": "@gld5000-react/plp-headers",
   "description": "A selection of PLP type header sections for your UI library",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "keywords": [
     "UI",
     "Library",
