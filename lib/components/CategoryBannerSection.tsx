@@ -1,6 +1,6 @@
 import { classMerge } from "../utils/twUtils";
 
-export default function PLPHeaderSection({
+export default function CategoryBannerSection({
   className,
   ...props
 }: React.ComponentProps<"section">) {

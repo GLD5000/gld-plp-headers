@@ -1,6 +1,6 @@
 import ButtonWrapper from "./components/buttons/ButtonWrapper";
-import PLPHeaderSection from "./components/PLPHeaderSection";
-import PlpHeader from "./components/header/PlpHeader";
+import CategoryBannerSection from "./components/CategoryBannerSection";
+import BannerTitleH1 from "./components/bannerTitle/bannerTitleH1";
 import DisclosureParagraph, {
   type DisclosureCopy,
 } from "./components/disclosureParagraph/DisclosureParagraph";
@@ -33,8 +33,8 @@ export default function PlpHeaderComplete({
   ],
 }: PlpHeaderCompleteProps) {
   return (
-    <PLPHeaderSection>
-      <PlpHeader>PLP Header</PlpHeader>
+    <CategoryBannerSection>
+      <BannerTitleH1>PLP Header</BannerTitleH1>
       <DisclosureParagraph copy={disclosureCopy} />
       <ButtonWrapper>
         {buttons.map((button, index) => (
@@ -43,6 +43,6 @@ export default function PlpHeaderComplete({
           </LinkButton>
         ))}
       </ButtonWrapper>
-    </PLPHeaderSection>
+    </CategoryBannerSection>
   );
 }

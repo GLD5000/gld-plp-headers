@@ -1,6 +1,6 @@
 import { classMerge } from "../../utils/twUtils";
 
-export default function PlpHeader({
+export default function BannerTitleH1({
   className,
   ...props
 }: React.ComponentProps<"h1">) {
