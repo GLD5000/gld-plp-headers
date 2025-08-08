@@ -1,7 +1,7 @@
 import React from "react";
 import { classMerge } from "../../utils/twUtils";
 
-export default function LinkButton({
+export function LinkButton({
   className,
   ...props
 }: React.ComponentProps<"a">) {

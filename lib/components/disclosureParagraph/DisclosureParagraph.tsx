@@ -9,7 +9,7 @@ interface DisclosureParagraphProps extends React.ComponentProps<"p"> {
   copy?: DisclosureCopy;
 }
 
-export default function DisclosureParagraph({
+export function DisclosureParagraph({
   className,
   copy = {
     intro:

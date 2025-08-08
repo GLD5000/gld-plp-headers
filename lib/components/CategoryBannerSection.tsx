@@ -1,6 +1,6 @@
 import { classMerge } from "../utils/twUtils";
 
-export default function CategoryBannerSection({
+export function CategoryBannerSection({
   className,
   ...props
 }: React.ComponentProps<"section">) {

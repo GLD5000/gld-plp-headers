@@ -9,7 +9,7 @@ import { classMerge } from "../../utils/twUtils";
  * @param {React.ComponentProps<"div">} param0....props 
  * @returns {*} 
  */
-export default function ButtonWrapper({
+export function ButtonWrapper({
   className,
   ...props
 }: React.ComponentProps<"div">) {
