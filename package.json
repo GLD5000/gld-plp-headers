@@ -22,7 +22,7 @@
   ],
   "scripts": {
     "dev": "vite",
-    "prepublish": "npm run build",
+    "prepare": "npm run build",
     "build": "tsc -b ./tsconfig.lib.json && vite build && npm run build:css",
     "build:css": "tailwindcss -m -i ./src/App.css -o ./dist/styles.css",
     "lint": "eslint .",
