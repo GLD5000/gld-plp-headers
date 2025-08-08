@@ -16,9 +16,8 @@
   "main": "dist/plp-headers.js",
   "types": "dist/main.d.ts",
   "files": [
-    "dist",
-    "lib"
-  ],
+    "dist"
+    ],
   "scripts": {
     "dev": "vite",
     "build": "tsc -b ./tsconfig.lib.json && vite build && npm run build:css",
