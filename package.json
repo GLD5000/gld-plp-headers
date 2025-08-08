@@ -15,12 +15,14 @@
   "type": "module",
   "main": "dist/plp-headers.js",
   "types": "dist/main.d.ts",
+  "style": "dist/styles.css",
   "files": [
     "dist",
     "lib"
   ],
   "scripts": {
     "dev": "vite",
+    "prepublish": "npm run build",
     "build": "tsc -b ./tsconfig.lib.json && vite build && npm run build:css",
     "build:css": "tailwindcss -m -i ./src/App.css -o ./dist/styles.css",
     "lint": "eslint .",
