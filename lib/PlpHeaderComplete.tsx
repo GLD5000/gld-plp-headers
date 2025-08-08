@@ -4,6 +4,7 @@ import PlpHeader from "./components/header/PlpHeader";
 import DisclosureParagraph, {
   type DisclosureCopy,
 } from "./components/disclosureParagraph/DisclosureParagraph";
+import LinkButton from "./components/buttons/LinkButton";
 
 type linkButton = {
   url: string;
@@ -27,13 +28,21 @@ export default function PlpHeaderComplete({
     { url: "Missing Link", cta: "Call to Action" },
     { url: "Missing Link", cta: "Call to Action" },
     { url: "Missing Link", cta: "Call to Action" },
+    { url: "Missing Link", cta: "Call to Action" },
+    { url: "Missing Link", cta: "Call to Action" },
   ],
 }: PlpHeaderCompleteProps) {
   return (
-      <PLPHeaderSection>
-        <PlpHeader>PLP Header</PlpHeader>
-        <DisclosureParagraph copy={disclosureCopy} />
-        <ButtonWrapper></ButtonWrapper>
-      </PLPHeaderSection>
+    <PLPHeaderSection>
+      <PlpHeader>PLP Header</PlpHeader>
+      <DisclosureParagraph copy={disclosureCopy} />
+      <ButtonWrapper>
+        {buttons.map((button, index) => (
+          <LinkButton href={button.url} key={`button-${index}-${button.cta}`}>
+            {button.cta}
+          </LinkButton>
+        ))}
+      </ButtonWrapper>
+    </PLPHeaderSection>
   );
 }
