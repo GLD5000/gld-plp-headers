@@ -1,5 +1,5 @@
+import { PlpHeaderComplete } from "../lib/main";
 import "./App.css";
-import PlpHeaderComplete from "../lib/PlpHeaderComplete";
 
 function App() {
   return (
