@@ -53,6 +53,8 @@
     "react": "latest",
     "react-dom": "latest",
     "tailwind-merge": "latest",
-    "tailwindcss": "latest"
+    "tailwindcss": "latest",
+    "react/jsx-runtime":"latest"
+
   }
 }
