@@ -24,7 +24,7 @@ export default function DisclosureParagraph({
   return (
     <p
       {...props}
-      className={classMerge("bg-white w-full text-black p-2", className)}
+      className={classMerge("bg-white w-full text-black text-center mx-auto p-2", className)}
     >
       {returnElements}
     </p>
