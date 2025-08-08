@@ -1,4 +1,4 @@
-import { classMerge } from "./utils/twUtils";
+import { classMerge } from "../utils/twUtils";
 
 export default function PLPHeaderSection({
   className,

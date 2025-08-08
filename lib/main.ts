@@ -1,3 +1,3 @@
-import DisclosureParagraph from "./components/disclosureParagraph/DisclosureParagraph";
+import PlpHeaderComplete from "./PlpHeaderComplete";
 
-export {DisclosureParagraph}
+export {PlpHeaderComplete}

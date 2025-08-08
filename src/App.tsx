@@ -1,8 +1,8 @@
 import "./App.css";
-import PLPHeaderSection from "../lib/PLPHeaderSection";
+import PLPHeaderSection from "../lib/components/PLPHeaderSection";
 import PlpHeader from "../lib/components/header/PlpHeader";
-import { DisclosureParagraph } from "../lib/main";
 import ButtonWrapper from "../lib/components/buttons/ButtonWrapper";
+import DisclosureParagraph from "../lib/components/disclosureParagraph/DisclosureParagraph";
 
 function App() {
   return (
