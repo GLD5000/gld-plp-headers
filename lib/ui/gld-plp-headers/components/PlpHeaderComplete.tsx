@@ -12,12 +12,14 @@ type linkButton = {
     cta: string;
 };
 
-interface PlpHeaderCompleteProps {
+export interface PlpHeaderCompleteProps {
+    headerTitle?: string;
     disclosureCopy?: DisclosureCopy;
     buttons?: linkButton[];
 }
 
 export function PlpHeaderComplete({
+    headerTitle = 'PLP Header',
     disclosureCopy = {
         intro: "Introductory text and teaser words go here. You can click 'Read more' to see the rest.",
         remainder:
@@ -34,7 +36,7 @@ export function PlpHeaderComplete({
 }: PlpHeaderCompleteProps) {
     return (
         <CategoryBannerSection>
-            <BannerTitleH1>PLP Header</BannerTitleH1>
+            <BannerTitleH1>{headerTitle}</BannerTitleH1>
             <DisclosureParagraph copy={disclosureCopy} />
             <ButtonWrapper>
                 {buttons.map((button, index) => (
