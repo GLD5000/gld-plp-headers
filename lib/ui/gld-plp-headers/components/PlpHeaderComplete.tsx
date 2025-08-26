@@ -7,7 +7,7 @@ import {
 } from './disclosureParagraph/DisclosureParagraph';
 import { LinkButton } from './buttons/LinkButton';
 
-type linkButton = {
+export type plpHeaderLinkButton = {
     url: string;
     cta: string;
 };
@@ -15,7 +15,9 @@ type linkButton = {
 export interface PlpHeaderCompleteProps {
     headerTitle?: string;
     disclosureCopy?: DisclosureCopy;
-    buttons?: linkButton[];
+    buttons?: plpHeaderLinkButton[];
+    id?: string;
+    lineClamp?: boolean;
 }
 
 export function PlpHeaderComplete({
@@ -33,20 +35,22 @@ export function PlpHeaderComplete({
         { url: 'Missing Link', cta: 'Call to Action E' },
         { url: 'Missing Link', cta: 'Call to Action F' },
     ],
+    id = 'gld-read-more',
 }: PlpHeaderCompleteProps) {
     return (
         <CategoryBannerSection>
             <BannerTitleH1>{headerTitle}</BannerTitleH1>
-            <DisclosureParagraph copy={disclosureCopy} />
+            <DisclosureParagraph copy={disclosureCopy} id={id} />
             <ButtonWrapper>
-                {buttons.map((button, index) => (
-                    <LinkButton
-                        href={button.url}
-                        key={`button-${index}-${button.cta}`}
-                    >
-                        {button.cta}
-                    </LinkButton>
-                ))}
+                {buttons.length > 0 &&
+                    buttons.map((button, index) => (
+                        <LinkButton
+                            href={button.url}
+                            key={`button-${index}-${button.cta}`}
+                        >
+                            {button.cta}
+                        </LinkButton>
+                    ))}
             </ButtonWrapper>
         </CategoryBannerSection>
     );

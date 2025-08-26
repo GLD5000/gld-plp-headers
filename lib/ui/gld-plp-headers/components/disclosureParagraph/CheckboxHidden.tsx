@@ -1,3 +1,7 @@
-export default function CheckboxHidden() {
-    return <input type="checkbox" className="peer hidden" id="gld-read-more" />;
+export default function CheckboxHidden({
+    id = 'gld-read-more',
+}: {
+    id?: string;
+}) {
+    return <input type="checkbox" className="peer hidden" id={id} />;
 }

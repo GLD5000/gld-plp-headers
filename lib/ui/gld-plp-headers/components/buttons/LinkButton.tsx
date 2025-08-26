@@ -7,7 +7,7 @@ export function LinkButton({ className, ...props }: React.ComponentProps<'a'>) {
             style={{ color: 'unset' }}
             {...props}
             className={classMerge(
-                'border border-solid text-lg border-gray-300 rounded-lg px-4 py-2 w-max shrink-0',
+                'border border-solid text-lg text-center border-gray-300 rounded-lg px-4 py-2 w-max shrink-0',
                 className
             )}
         />
