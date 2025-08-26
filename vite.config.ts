@@ -9,7 +9,7 @@ export default defineConfig({
   plugins: [react(),tailwindcss(), dts({ include: ["lib"] ,tsconfigPath: './tsconfig.lib.json'})],
   build: {
     lib: {
-      entry: resolve(__dirname, "lib/main.ts"),
+      entry: resolve(__dirname, "lib/ui/gld-plp-headers/components/gld-plp-headers.ts"),
       formats: ["es"],
     },
     copyPublicDir: false,
